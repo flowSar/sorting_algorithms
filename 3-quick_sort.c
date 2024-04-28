@@ -7,7 +7,9 @@
  */
 void quick_sort(int *array, size_t size)
 {
-		quik_sort_handler(array, size, 0, size - 1);
+	if (size <= 1 || array == NULL)
+		return;
+	quik_sort_handler(array, size, 0, size - 1);
 }
 /**
  * quik_sort_handler - sort array of integer
@@ -19,30 +21,26 @@ void quick_sort(int *array, size_t size)
  */
 void quik_sort_handler(int *array, size_t size, int f, int l)
 {
-	int i, j, pivot;
-
-	pivot = array[l];
-	i = f;
-	j = l;
+	int i = f;
+	int j = l;
+	int pivot = array[l];
 
 	if (l <= f)
 		return;
-
 	while (i <= j)
 	{
-		for (; array[j] >= pivot && j > 0;)
+		if (array[j] >= pivot)
 			j--;
-		for (; array[i] <= pivot && i < l;)
+
+		if (array[i] <= pivot)
 			i++;
-
-		if (j <= i)
+		if (j < i)
 			break;
-		if (array[i] > array[j])
-			Swap(array, size, i, j);
 
+		if (array[i] > pivot && array[j] < pivot)
+			Swap(array, size, i, j);
 	}
-	if (j <= i)
-		Swap(array, size, i, l);
+	Swap(array, size, i, l);
 	quik_sort_handler(array, size, f, j);
 	quik_sort_handler(array, size, j + 1, l);
 }
