@@ -14,10 +14,12 @@
 */
 typedef struct listint_s
 {
-	const int n;
+    const int n;
 	struct listint_s *prev;
 	struct listint_s *next;
 } listint_t;
+void comapre_and_swap(listint_t **head, listint_t *start);
+listint_t *swap_nodes(listint_t **head, listint_t *node1, listint_t *node2);
 void Swap(int *array, size_t size, int i, int j);
 void quik_sort_handler(int *array, size_t size, int f, int l);
 void print_array(const int *array, size_t size);
