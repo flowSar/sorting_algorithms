@@ -9,11 +9,14 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *start_node;
 
-	start_node = (*list)->next;
-	while (start_node)
+	if ((list) != NULL)
 	{
-		comapre_and_swap(list, start_node);
-		start_node = start_node->next;
+		start_node = (*list)->next;
+		while (start_node)
+		{
+			comapre_and_swap(list, start_node);
+			start_node = start_node->next;
+		}
 	}
 }
 /**
@@ -74,7 +77,8 @@ listint_t *swap_nodes(listint_t **head, listint_t *node1, listint_t *node2)
 
 		(*tmp)->next = node2->next;
 		(*tmp)->prev = (*head);
-		node2->next->prev = (*tmp);
+		if (node2->next != NULL)
+			node2->next->prev = (*tmp);
 		(*head)->next = (*tmp);
 		(*head)->prev = NULL;
 		return (*tmp);
