@@ -9,7 +9,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *start_node;
 
-	if ((list) != NULL)
+	if ((list) != NULL && is_dubby_linked_list(list) != 0)
 	{
 		start_node = (*list)->next;
 		while (start_node)
@@ -18,6 +18,26 @@ void insertion_sort_list(listint_t **list)
 			start_node = start_node->next;
 		}
 	}
+}
+/**
+ * is_dubby_linked_list - check if linked_list is
+ * a doublylinked_list
+ *
+ * @head: linked_list head
+ *
+ * Return: 0 if not and 1 if it's a doublt linked_list.
+ */
+int is_dubby_linked_list(listint_t **head)
+{
+	listint_t *next;
+
+	next = (*head)->next;
+	if (next)
+	{
+		if (next->prev == NULL)
+			return (0);
+	}
+	return (1);
 }
 /**
  * comapre_and_swap - function for cmpare two nodes and swap

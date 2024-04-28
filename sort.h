@@ -18,6 +18,8 @@ typedef struct listint_s
 	struct listint_s *prev;
 	struct listint_s *next;
 } listint_t;
+
+int is_dubby_linked_list(listint_t **head);
 void comapre_and_swap(listint_t **head, listint_t *start);
 listint_t *swap_nodes(listint_t **head, listint_t *node1, listint_t *node2);
 void Swap(int *array, size_t size, int i, int j);
