@@ -1,4 +1,5 @@
 #include "sort.h"
+int partition(int *array, size_t size, int f, int l);
 /**
  * quick_sort - sort array of integer
  *
@@ -16,17 +17,37 @@ void quick_sort(int *array, size_t size)
  *
  * @array: array of integer
  * @size: size of array
- * @f: first index of partition
- * @l: last index of partition
+ * @f: first index of array or partition
+ * @l: last index of array or partition
  */
 void quik_sort_handler(int *array, size_t size, int f, int l)
+{
+	if (l <= f)
+		return;
+	int j = partition(array, size, f, l);
+
+	quik_sort_handler(array, size, f, j);
+	quik_sort_handler(array, size, j + 1, l);
+}
+
+/**
+ * partition - partition method for quick sort.
+ * this function works on sorting or puting the
+ * pivot in his right position .
+ *
+ * @array: array of integer
+ * @size: size of array
+ * @f: first index of partition
+ * @l: last index of partition
+ *
+ * Return: return the index
+ */
+int partition(int *array, size_t size, int f, int l)
 {
 	int i = f;
 	int j = l;
 	int pivot = array[l];
 
-	if (l <= f)
-		return;
 	while (i <= j)
 	{
 		if (array[j] >= pivot)
@@ -41,9 +62,9 @@ void quik_sort_handler(int *array, size_t size, int f, int l)
 			Swap(array, size, i, j);
 	}
 	Swap(array, size, i, l);
-	quik_sort_handler(array, size, f, j);
-	quik_sort_handler(array, size, j + 1, l);
+	return (j);
 }
+
 /**
  * Swap - swap two elment of an array
  *
