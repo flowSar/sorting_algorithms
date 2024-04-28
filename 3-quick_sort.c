@@ -22,10 +22,11 @@ void quick_sort(int *array, size_t size)
  */
 void quik_sort_handler(int *array, size_t size, int f, int l)
 {
+	int j;
+
 	if (l <= f)
 		return;
-	int j = partition(array, size, f, l);
-
+	j = partition(array, size, f, l);
 	quik_sort_handler(array, size, f, j);
 	quik_sort_handler(array, size, j + 1, l);
 }
