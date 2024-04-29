@@ -79,28 +79,20 @@ void comapre_and_swap(listint_t **head, listint_t *start)
  */
 listint_t *swap_nodes(listint_t **head, listint_t *node1, listint_t *node2)
 {
-	if (node1->prev != NULL)
+	if (node1 != NULL && node2 != NULL)
 	{
-		node1->prev->next = node2;
-		node2->prev = node1->prev;
-		node1->next = node2->next;
-		if (node2->next != NULL)
-			node2->next->prev = node1;
-		node2->next = node1;
-		node1->prev = node2;
-		return (node2);
-	}
-	else
-	{
-		listint_t **tmp = &node1;
-		*head = node2;
-
-		(*tmp)->next = node2->next;
-		(*tmp)->prev = (*head);
-		if (node2->next != NULL)
-			node2->next->prev = (*tmp);
-		(*head)->next = (*tmp);
-		(*head)->prev = NULL;
-		return (*tmp);
+		if (node2->n < node1->n)
+		{
+			node1->next = node2->next;
+			if (node2->next != NULL)
+				node2->next->prev = node1;
+			node2->prev = node1->prev;
+			if (node1->prev != NULL)
+				node1->prev->next = node2;
+			else
+				*head = node2;
+			node2->next = node1;
+			node1->prev = node2;
+		}
 	}
 }
