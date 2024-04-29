@@ -7,8 +7,9 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t j, i, tmp, swap_tracking;
+	size_t j, i, tmp, swap_tracking, swaping_number;
 
+	swaping_number = 0;
 	for (j = 0; j < size; j++)
 	{
 		swap_tracking = 0;
@@ -21,10 +22,13 @@ void bubble_sort(int *array, size_t size)
 				array[i + 1] = tmp;
 				swap_tracking += 1;
 				print_array(array, size);
+				swaping_number++;
 			}
 
 		}
 		if (swap_tracking == 0)
+			break;
+		if (swaping_number == 0)
 			break;
 	}
 }
