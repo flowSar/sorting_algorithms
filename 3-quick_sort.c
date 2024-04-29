@@ -8,7 +8,7 @@ int partition(int *array, size_t size, int f, int l);
  */
 void quick_sort(int *array, size_t size)
 {
-	if (size <= 1 || array == NULL)
+	if (size <= 1)
 		return;
 	quik_sort_handler(array, size, 0, size - 1);
 }
