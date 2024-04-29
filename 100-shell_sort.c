@@ -16,6 +16,9 @@ void shell_sort(int *array, size_t size)
 {
 	size_t interval, initial_interval, i, k;
 
+	if (size <= 1)
+		return;
+
 	initial_interval = knuth_sequence(size);
 	interval = initial_interval;
 	i = 0, k = 0;
