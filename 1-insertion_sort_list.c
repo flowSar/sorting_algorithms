@@ -93,6 +93,8 @@ listint_t *swap_nodes(listint_t **head, listint_t *node1, listint_t *node2)
 				*head = node2;
 			node2->next = node1;
 			node1->prev = node2;
+            return (node2);
 		}
 	}
+	return (NULL);
 }
