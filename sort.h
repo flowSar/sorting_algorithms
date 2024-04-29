@@ -34,4 +34,11 @@ void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 /* functions for shell-sort   */
 
+
+/* function for cocktal sort */
+listint_t *sort_left_r(listint_t **list, listint_t *node1, listint_t *node2);
+void sort_right_l(listint_t **list, listint_t *node2, listint_t *node1);
+void Swap_nodes_cocktail(listint_t **list, listint_t *node1, listint_t *node2);
+
+
 #endif

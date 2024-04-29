@@ -1,8 +1,5 @@
 #include "sort.h"
 
-listint_t *sort_left_r(listint_t **list, listint_t *node1, listint_t *node2);
-void sort_right_l(listint_t **list, listint_t *node2, listint_t *node1);
-void Swap_nodes_cocktail(listint_t **list, listint_t *node1, listint_t *node2);
 /**
  * cocktail_sort_list - this algorithm works like bubble sort
  * with additional rigth to left sort
