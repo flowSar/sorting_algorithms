@@ -41,5 +41,10 @@ listint_t *sort_left_r(listint_t **list, listint_t *node1, listint_t *node2);
 void sort_right_l(listint_t **list, listint_t *node2, listint_t *node1);
 void Swap_nodes_cocktail(listint_t **list, listint_t *node1, listint_t *node2);
 
+/* counting sort algorith function */
+int count_array_size(int *array, size_t size);
+void count_array(int *array, int *count, int count_size, size_t array_size);
+void update_array(int *array, size_t size, int *count);
+
 
 #endif

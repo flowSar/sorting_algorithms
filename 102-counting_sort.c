@@ -1,9 +1,5 @@
 #include "sort.h"
 
-int count_array_size(int *array, size_t size);
-void count_array(int *array, int *count, int count_size, size_t array_size);
-void update_array(int *array, size_t size, int *count);
-
 /**
  * counting_sort - is the main function of sorting our aray
  * it used for calling the funcion that works from creating
