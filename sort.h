@@ -46,5 +46,7 @@ int count_array_size(int *array, size_t size);
 void count_array(int *array, int *count, int count_size, size_t array_size);
 void update_array(int *array, size_t size, int *count);
 
+/* Merge sort functions */
+void merge_sort(int *array, size_t size);
 
 #endif

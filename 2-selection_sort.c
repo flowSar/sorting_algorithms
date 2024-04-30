@@ -11,6 +11,9 @@ void selection_sort(int *array, size_t size)
 	size_t i, idex1, idex2;
 	int tmp, swap_tracking;
 
+	if (size < 2 || array == NULL)
+		return;
+
 	idex1 = 0, idex1 = 0;
 	for (i = 0; i < size; i++)
 	{
