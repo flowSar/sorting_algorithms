@@ -9,6 +9,8 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *start_node;
 
+	if (list == NULL || (*list)->next == NULL)
+		return;
 	if ((list) != NULL && is_dubby_linked_list(list) != 0)
 	{
 		start_node = (*list)->next;
