@@ -1,38 +1,38 @@
 #include "sort.h"
-int partition(int *array, size_t size, int f, int l);
+int partition_hoare(int *array, size_t size, int f, int l);
 /**
- * quick_sort - sort array of integer
+ * quick_sort_hoare - sort array of integer
  *
  * @array: array of integer
  * @size: size of array
  */
-void quick_sort(int *array, size_t size)
+void quick_sort_hoare(int *array, size_t size)
 {
 	if (size <= 1 || array == NULL)
 		return;
-	quik_sort_handler(array, size, 0, size - 1);
+	quick_sort_hoare_handler(array, size, 0, size - 1);
 }
 /**
- * quik_sort_handler - sort array of integer
+ * quick_sort_hoare_handler - sort array of integer
  *
  * @array: array of integer
  * @size: size of array
  * @f: first index of array or partition
  * @l: last index of array or partition
  */
-void quik_sort_handler(int *array, size_t size, int f, int l)
+void quick_sort_hoare_handler(int *array, size_t size, int f, int l)
 {
 	int j;
 
 	if (l <= f)
 		return;
-	j = partition(array, size, f, l);
-	quik_sort_handler(array, size, f, j);
-	quik_sort_handler(array, size, j + 1, l);
+	j = partition_hoare(array, size, f, l);
+	quick_sort_hoare_handler(array, size, f, j);
+	quick_sort_hoare_handler(array, size, j + 1, l);
 }
 
 /**
- * partition - partition method for quick sort.
+ * partition_hoare - partition method for quick sort.
  * this function works on sorting or puting the
  * pivot in his right position .
  *
@@ -43,7 +43,7 @@ void quik_sort_handler(int *array, size_t size, int f, int l)
  *
  * Return: return the index
  */
-int partition(int *array, size_t size, int f, int l)
+int partition_hoare(int *array, size_t size, int f, int l)
 {
 	int i = f;
 	int j = l;
@@ -85,4 +85,17 @@ void Swap(int *array, size_t size, int i, int j)
 		array[j] = tmp;
 		print_array(array, size);
 	}
+}
+
+int main(void)
+{
+    int array[] = {87, 65, 28, 63, 93, 52, 39, 59, 27, 30, 24, 83, 69, 62, 13, 6, 88, 58, 92, 26, 42, 11, 16, 21, 75, 36, 71, 8, 45, 38};
+    size_t n = sizeof(array) / sizeof(array[0]);
+
+    print_array(array, n);
+    printf("\n");
+    quick_sort_hoare(array, n);
+    printf("\n");
+    print_array(array, n);
+    return (0);
 }

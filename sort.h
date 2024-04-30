@@ -33,6 +33,10 @@ void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
+
+/* quick sort hoare partition */
+void quick_sort_hoare_handler(int *array, size_t size, int f, int l);
+void quick_sort_hoare(int *array, size_t size);
 /* functions for shell-sort   */
 
 
@@ -48,5 +52,7 @@ void update_array(int *array, size_t size, int *count);
 
 /* Merge sort functions */
 void merge_sort(int *array, size_t size);
+
+
 
 #endif
