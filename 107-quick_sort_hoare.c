@@ -8,7 +8,7 @@ int partition_hoare(int *array, size_t size, int f, int l);
  */
 void quick_sort_hoare(int *array, size_t size)
 {
-	if (size < 2 || array == NULL)
+	if (size <= 1 || array == NULL)
 		return;
 	quick_sort_hoare_handler(array, size, 0, size - 1);
 }
