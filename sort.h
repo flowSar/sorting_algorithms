@@ -53,6 +53,24 @@ void update_array(int *array, size_t size, int *count);
 /* Merge sort functions */
 void merge_sort(int *array, size_t size);
 
+/* radix sort */
+/**
+* struct bins_s - array bins node
+*
+* @n: Integer stored in the node
+* @next: Pointer to the next element of the list
+*/
+typedef struct bins_s
+{
+	int n;
+	struct bins_s *next;
+} bins_t;
+
+void fill_bin_array(bins_t **bins_array, int *array, size_t size, int div);
+void Override_array(bins_t **bins_array, int *array);
+void free_memory(bins_t **array);
+int find_div(int *array, size_t size);
+
 
 
 #endif
