@@ -71,7 +71,6 @@ void fill_bin_array(bins_t **bins_array, int *array, size_t size, int div)
  *
  * @bins_array: bins array.
  * @array: array of integer
- * @size: array size.
  */
 void Override_array(bins_t **bins_array, int *array)
 {
