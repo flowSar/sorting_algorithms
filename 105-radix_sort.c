@@ -11,6 +11,8 @@ void radix_sort(int *array, size_t size)
 	int i, j, v;
 	bins_t **bins_array;
 
+	if (size <= 1 || array == NULL)
+		return;
 	v = find_div(array, size);
 	for (i = 1; i <= v; i = i * 10)
 	{
