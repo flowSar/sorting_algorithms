@@ -70,7 +70,7 @@ void fill_bin_array(bins_t **bins_array, int *array, size_t size, int div);
 void Override_array(bins_t **bins_array, int *array);
 void free_memory(bins_t **array);
 int find_div(int *array, size_t size);
-
+void radix_sort(int *array, size_t size);
 
 
 #endif
