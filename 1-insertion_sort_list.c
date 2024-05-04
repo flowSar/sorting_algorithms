@@ -58,7 +58,6 @@ void comapre_and_swap(listint_t **head, listint_t *start)
 	{
 		if (prev_node != NULL && current->n < prev_node->n)
 		{
-			print_list(*head);
 			current = swap_nodes(head, prev_node, current);
 		}
 		else
@@ -95,6 +94,7 @@ listint_t *swap_nodes(listint_t **head, listint_t *node1, listint_t *node2)
 				*head = node2;
 			node2->next = node1;
 			node1->prev = node2;
+			print_list(*head);
 			return (node1);
 		}
 	}
