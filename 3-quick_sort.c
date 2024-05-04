@@ -83,6 +83,7 @@ void Swap(int *array, size_t size, int i, int j)
 		tmp = array[i];
 		array[i] = array[j];
 		array[j] = tmp;
-		print_array(array, size);
+		if (array[i] != array[j])
+			print_array(array, size);
 	}
 }
