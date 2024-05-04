@@ -54,7 +54,7 @@ void update_array(int *array, size_t size, int *count);
 void merge_sort(int *array, size_t size);
 void merge_sort_handler(int *array, int f, int l);
 void merge(int *array, int f, int l);
-void print_array_from_to(const int *array, int i , int j);
+void print_array_from_to(const int *array, int i, int j);
 
 /* radix sort */
 /**

@@ -7,6 +7,8 @@
  */
 void merge_sort(int *array, size_t size)
 {
+	if (array == NULL || size < 2)
+		return;
 	merge_sort_handler(array, 0, size - 1);
 }
 /**
