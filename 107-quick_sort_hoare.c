@@ -47,7 +47,6 @@ int partition_hoare(int *array, size_t size, int f, int l)
 {
 	int i = f;
 	int j = l;
-    int swap_tracking;
 	int pivot = array[l];
 
 	while (i <= j)
@@ -84,19 +83,7 @@ void Swap(int *array, size_t size, int i, int j)
 		tmp = array[i];
 		array[i] = array[j];
 		array[j] = tmp;
-        if (array[i] != array[j])
-            print_array(array, size);
+		if (array[i] != array[j])
+			print_array(array, size);
 	}
-}
-int main(void)
-{
-	int array[] = {98, 98, 98, 98, 98, 98, 98, 98, 98, 98, 98, 98, 98, 98, 98, 98, 98, 98, 98, 98};
-	size_t n = sizeof(array) / sizeof(array[0]);/* 20 */
-
-	print_array(array, n);
-	printf("\n");
-	quick_sort_hoare(array, n);
-	printf("\n");
-	print_array(array, n);
-	return (0);
 }
