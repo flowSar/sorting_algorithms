@@ -19,12 +19,12 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+void print_array(const int *array, size_t size);
 int is_dubby_linked_list(listint_t **head);
 void comapre_and_swap(listint_t **head, listint_t *start);
 listint_t *swap_nodes(listint_t **head, listint_t *node1, listint_t *node2);
 void Swap(int *array, size_t size, int i, int j);
 void quik_sort_handler(int *array, size_t size, int f, int l);
-void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
@@ -52,6 +52,9 @@ void update_array(int *array, size_t size, int *count);
 
 /* Merge sort functions */
 void merge_sort(int *array, size_t size);
+void merge_sort_handler(int *array, int f, int l);
+void merge(int *array, int f, int l);
+void print_array_from_to(const int *array, int i , int j);
 
 /* radix sort */
 /**
@@ -71,6 +74,5 @@ void Override_array(bins_t **bins_array, int *array);
 void free_memory(bins_t **array);
 int find_div(int *array, size_t size);
 void radix_sort(int *array, size_t size);
-
 
 #endif
