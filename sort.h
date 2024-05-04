@@ -40,9 +40,11 @@ void quick_sort_hoare(int *array, size_t size);
 /* functions for shell-sort   */
 
 
-/* function for cocktal sort */
-listint_t *sort_left_r(listint_t **list, listint_t *node1, listint_t *node2);
-void sort_right_l(listint_t **list, listint_t *node2, listint_t *node1);
+/* function for cocktail sort */
+listint_t *sort_left_r(listint_t **list, listint_t *node1,
+					 listint_t *node2, listint_t *st);
+listint_t *sort_right_l(listint_t **list, listint_t *node2,
+						listint_t *node1, listint_t *st);
 void Swap_nodes_cocktail(listint_t **list, listint_t *node1, listint_t *node2);
 
 /* counting sort algorith function */
